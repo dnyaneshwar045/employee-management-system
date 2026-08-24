@@ -166,7 +166,7 @@ export default function App() {
       >
         <h2 style={{ margin: 0 }}>Employee Management System</h2>
         <button
-          className="btn-delete"
+          className="btn-logout"
           onClick={handleLogout}
           style={{ padding: "8px 15px" }}
         >
