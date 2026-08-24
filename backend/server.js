@@ -30,7 +30,7 @@ const validateEmployee = (req, res, next) => {
   next(); 
 };
 
-// --- AUTHENTICATION LOGIC ---
+// AUTHENTICATION LOGIC
 const SECRET_KEY = process.env.SECRET_KEY;
 // Login Route (Generates the token)
 app.post('/login', (req, res) => {
@@ -56,7 +56,7 @@ const verifyAuth = (req, res, next) => {
   }
 };
 
-// --- CRUD ROUTES (Now protected by verifyAuth) ---
+// CRUD ROUTES (Now protected by verifyAuth)
 // Notice how verifyAuth is added before the routes execute
 app.post('/employees', verifyAuth, validateEmployee, async (req, res, next) => {
   try {

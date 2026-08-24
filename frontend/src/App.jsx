@@ -2,12 +2,12 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 
 export default function App() {
-  // --- AUTHENTICATION STATE ---
+  // UTHENTICATION STATE
   const [token, setToken] = useState(localStorage.getItem("token") || null);
   const [loginForm, setLoginForm] = useState({ username: "", password: "" });
   const [authError, setAuthError] = useState("");
 
-  // --- EMPLOYEE STATE ---
+  // EMPLOYEE STATE
   const [employees, setEmployees] = useState([]);
   const [form, setForm] = useState({
     name: "",
@@ -109,7 +109,7 @@ export default function App() {
     return emp.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-  // --- RENDER LOGIN SCREEN IF NOT AUTHENTICATED ---
+  // RENDER LOGIN SCREEN IF NOT AUTHENTICATED 
   if (!token) {
     return (
       <div
@@ -151,7 +151,7 @@ export default function App() {
     );
   }
 
-  // --- RENDER MAIN APP IF AUTHENTICATED ---
+  // RENDER MAIN APP IF AUTHENTICATED 
   return (
     <div className="container">
       {/* Updated Header Container */}
